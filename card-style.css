@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card{
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.card .poster{
+    position: relative;
+    overflow: hidden;
+}
+
+.card .poster img{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.card:hover .poster img{
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+
+.card .poster::before{
+    content: "";
+    position: absolute;
+    bottom: -125px;
+    width: 100%;
+    height: 100%;
+    background : linear-gradient(0deg, #1064a6 50%,transparent );
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.card:hover .poster::before{
+    bottom: 0;
+}
+
+.card .details {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.card:hover .details{
+    bottom: 50px;
+}
+
+.card .info {
+    position: absolute;
+    transition: 0.5s;
+    color: #fff;
+    bottom: -50px;
+    left: 0;
+    padding: 20px;
+}
+
+.card:hover .info {
+    bottom: 0;
+    z-index: 3;
+}
+
+
+
